@@ -29,8 +29,13 @@ library(ovaHRDscar)
 library(dplyr)
 library(ggrepel)
 
+#Add the path where you have your repository cloned
+repo.path <- "D:/users/fperez/SNP-arrays_results/SNParray_ovaHRDscar_QC/"
+
+
+#Next script is in the folder where you cloned the repository
 #Loading script with functions
-source("D:/users/fperez/SNP-arrays_results/Scripts/functions_QC_BAF_LOG.R")
+source(paste0(repo.path, "functions_QC_BAF_LOG.R"))
 
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ################################## Declare your input variables ####################################################
