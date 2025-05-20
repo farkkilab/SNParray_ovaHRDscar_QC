@@ -217,7 +217,7 @@ Description of columns in resultant file:
 - The sample ploidy infered by ASCAT
 - The sample purity infered by ASCAT
 
-## List of scripts in this repository:
+## Description of scripts in this repository
 
 1. *ASCAT3_QCs_ovaHRDscars_onlyTumor.R* - Master R script to run all the ASCAT, MAPD calculation, ovaHRDscar analysis.
 2. *functions_QC_BAF_LOG.R* - An R script with functions that are used internally by the script *ASCAT3_QCs_ovaHRDscars_onlyTumor.R*
