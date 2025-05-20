@@ -165,7 +165,9 @@ The script will be printing status of the process.
 
 ## Outputs
 
-Firstly in the second block of the script, the LogR and BAF files will be proccesed to only select autosomes and sort them by position. The next two files will be generated that will be input for ASCAT:
+### Intermediate files
+
+In the second block of the script, the LogR and BAF files will be proccesed to only select autosomes and sort them by position. The next two files will be generated that will be input for ASCAT:
 1. BAF_samples_autosomes.txt
 2. LogRratio_samples_autosomes.txt
 
@@ -177,8 +179,36 @@ In the third block of the script A folder `ASCAT/` will be generated with all th
  5. Table with stimated purity per sample
  6. Table with stimated ploidy per sample
 
-In the fifth block of the script a the HRDscar calculation will be performed and the next two interemediate files will be generated.
+In the fifth block of the script a the HRDscar calculation will be performed and the next two interemediate files will be generated, one with ovaHRDscar metrics and another with Telli et al, 2016 metrics:
+1. Telli_scars_Suffix.txt
+2. ovaHRDscars_Suffix.txt
 
-In the sixth block of the script a MAPD calculation will be generated the next file with MAPD per sample will be generated `MAPD_PARP_Suffix.txt`.
+In the sixth block of the script a Median of the Absolute values of all Pairwise Differences (MAPD) calculation will be generated using the LogRratio_samples_autosomes.txt as input. A file with MAPD per sample will be generated `MAPD_PARP_Suffix.txt`.
 
-In the fifth block, all 
+More about MAPD in the next site: [link](https://assets.thermofisher.com/TFS-Assets/LSG/brochures/mapd_snp6_whitepaper.pdf)
+
+In the seventh block, all intermediate files will be merged.
+
+### Final result file
+
+After all intermediate files get merged, a final file `QC-scars-info_Suffix.csv` will be generated.
+
+Example of final file:
+
+```
+name	MAPD	Sample_Name	Call.Rate	nLOH	LSTs	nTAIs	ovaHRDscar	Telli.LOH	Telli.LSTs	Telli.nTAIs	Telli.HRDsum	ASCAT.ploidy	ASCAT.purity
+P1	0.763	NA	0.7819392	11	17	21	49	16	21	21	58	1.88	0.63
+P10	0.618	NA	0.8536346	25	19	20	64	28	25	20	73	1.59	0.7
+P11	0.819	NA	0.8002526	7	5	8	20	13	6	8	27	1.75	0.38
+P12	0.71	NA	0.8693979	0	0	8	8	0	0	8	8	1.95	0.43
+```
+
+Description of columns in resultant file:
+
+- *name* : Sample_ID extracted from the file `Sample_sheet.csv`
+- *MAPD* : MAPD values in the LogR files
+- *Call.Rate* : Call rate assessed with GenomeStudio for each sample and listed in the file `Samples_QC.txt`
+- Then three columns with nLOH, LSTs and TAIs per sample according to ovaHRDscar criteria
+- Then three columns with nLOH, LSTs and TAIs per sample according to Telli et al, 2016 criteria
+- The sample ploidy infered by ASCAT
+- The sample purity infered by ASCAT
