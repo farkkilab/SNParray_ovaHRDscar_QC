@@ -29,7 +29,7 @@ library(ovaHRDscar)
 library(dplyr)
 library(ggrepel)
 
-#Add the path where you have your repository cloned
+#Add the path where you have your repository SNParray_ovaHRDscar_QC (scripts) cloned
 repo.path <- "D:/users/fperez/SNP-arrays_results/SNParray_ovaHRDscar_QC/"
 
 
