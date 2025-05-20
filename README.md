@@ -123,9 +123,13 @@ Firstly. Create a project folder that will allocate all your input files. Create
 
 You don't need to have in  the same folder the GCcorrectionfile and ReplicationTiming, just give the full path to where this files are.
 
-Clone this repository or download the scripts. The inside the script adjust the next variables in the first block of the script according to the location of your input files:
+Clone this repository or download the scripts. 
+
+The main script for running the analysis is: **ASCAT3_QCs_ovaHRDscars_onlyTumor.R**. Inside this script adjust the next variables in the first block of the script according to the location of your input files:
 
 - *repo.path* - #Add the path where you have this repository SNParray_ovaHRDscar_QC (scripts) cloned
+
+Also the next variables inside the script:
 ```
 #This is the folder where you have all the files LogR, BAF
 #In this folder a new folder will be created with results
@@ -212,3 +216,9 @@ Description of columns in resultant file:
 - Then three columns with nLOH, LSTs and TAIs per sample according to Telli et al, 2016 criteria
 - The sample ploidy infered by ASCAT
 - The sample purity infered by ASCAT
+
+## List of scripts in this repository:
+
+1. *ASCAT3_QCs_ovaHRDscars_onlyTumor.R* - Master R script to run all the ASCAT, MAPD calculation, ovaHRDscar analysis.
+2. *functions_QC_BAF_LOG.R* - An R script with functions that are used internally by the script *ASCAT3_QCs_ovaHRDscars_onlyTumor.R*
+3. *select-Autosomes.sh* - An archival bash (shell) script to proccess the LogRatio and BAFfiles, this script is not longer needed in the analysis.
