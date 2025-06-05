@@ -1,5 +1,5 @@
 #Made by Fernando Perez-Villatoro
-#Script for calculating nomalized LSTs by inferred whole genome duplications (WGD) according to: Christinat, Yann, et al. JCO Precision Oncology 7 (2023): e2200555.
+#Script for calculating nomalized LSTs by inferred whole genome duplications (WGD) according to: Christinat, Yann, et al. JCO Precision Oncology 2023: e2200555.
 #The nLSTs are calculated as follow:  nLST = LST − kW, where W is the number of WGD
 #The LTS are by defined by T. popova et al, 2012 and adopted by Telli et al, 2016
 
