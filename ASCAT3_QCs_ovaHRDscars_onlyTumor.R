@@ -87,14 +87,13 @@ dir.create(ascat.output.dir)
 #Checking if samplesheet and callrates have the right column names
 samp.sheet <- read.table(paste0(Project_folder, samplesheet), header = TRUE, sep= ",")
 call.rates <- read.table(paste0(Project_folder, callrates), header = TRUE, sep= "\t")
-required.col.names <- 
 
 if(!(all(c("Sample_ID", "Sample_Name") %in% colnames(samp.sheet)))){
-  stop(paste0("Input file ", samp.sheet, "is missing the columns Sample_ID or Sample_Name"))
+  stop(paste0("Input file ", samplesheet, " is missing the columns Sample_ID or Sample_Name"))
 }
 
 if(!(all(c("Index", "Sample.ID", "Call.Rate") %in% colnames(call.rates)))){
-  stop(paste0("Input file ", samp.sheet, "is missing the columns Index or Sample.ID or Call.Rate"))
+  stop(paste0("Input file ", callrates, " is missing the columns Index or Sample.ID or Call.Rate"))
 }
 
 
